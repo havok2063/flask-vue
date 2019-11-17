@@ -9,5 +9,5 @@ conda activate fv
 ## Run Flask app in development mode
 ```
 export FLASK_ENV=development
-flask run -p [PORT]
+flask run -p 9000
 ```

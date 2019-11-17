@@ -1,6 +1,24 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 
+# Books definitions
+BOOKS = [
+    {
+        'title': 'On the Road',
+        'author': 'Jack Kerouac',
+        'read': True
+    },
+    {
+        'title': 'Harry Potter and the Philosopher\'s Stone',
+        'author': 'J. K. Rowling',
+        'read': False
+    },
+    {
+        'title': 'Green Eggs and Ham',
+        'author': 'Dr. Seuss',
+        'read': True
+    }
+]
 
 # configuration
 DEBUG = True
@@ -22,6 +40,15 @@ def home():
 @app.route('/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
+
+
+# route for books
+@app.route('/books', methods=['GET'])
+def all_books():
+    return jsonify({
+        'status': 'success',
+        'books': BOOKS
+    })
 
 
 if __name__ == '__main__':

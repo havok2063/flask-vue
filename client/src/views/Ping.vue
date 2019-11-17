@@ -11,7 +11,7 @@ export default {
   name: 'ping',
   data() {
     return {
-      msg: 'Hello!',
+      msg: '',
     };
   },
   methods: {
