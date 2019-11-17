@@ -4,6 +4,7 @@
       <div class="col-sm-10">
         <h1>Books</h1>
         <hr><br><br>
+        <alert></alert>
         <button type="button" class="btn btn-success btn-sm" v-b-modal.book-modal>Add Book</button>
         <br><br>
         <table class="table table-hover">
@@ -76,6 +77,7 @@
 
 <script>
 import axios from 'axios';
+import Alert from '../components/Alert.vue';
 
 export default {
   data() {
@@ -87,6 +89,9 @@ export default {
         read: [],
       },
     };
+  },
+  components: {
+    alert: Alert,
   },
   methods: {
     getBooks() {
